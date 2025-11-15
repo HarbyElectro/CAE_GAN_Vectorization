@@ -1,3 +1,21 @@
+# Convolutional Autoencoder for CelebA and Folder-Based Image Datasets
+
+This repository provides a Keras/TensorFlow implementation of a Convolutional Autoencoder (CAE) for image compression, reconstruction, and latent-space extraction. The training pipeline supports CelebA, CFPW, IMDb Faces, Oxford Flowers, MNIST, and any dataset organized using a standard folder-based structure.
+
+🚀 Features
+
+*Generic Dataset Loader
+**Works with any dataset arranged as:
+```bash
+dataset/
+    class_1/
+        img001.jpg
+        img002.jpg
+    class_2/
+        img003.jpg
+        img004.jpg
+```
+
 # GAN Autoencoder for Image Compression and Retrieval
 
 This repository provides a PyTorch implementation of a GAN-style autoencoder for image compression, reconstruction, and latent-based retrieval. The code supports both the CFPD face dataset and any generic image dataset organized in folders.
