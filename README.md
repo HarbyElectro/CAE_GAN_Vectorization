@@ -60,7 +60,7 @@ All datasets can be used with:
 
 - `--dataset_type image_folder`  
 - A directory structure following:
-
+```bash
 dataset/
 class_1/
 img001.jpg
@@ -68,7 +68,9 @@ img002.jpg
 class_2/
 img003.jpg
 img004.jpg
+```
 ▶ 1. Train on CFPD Dataset
+```bash
 python gan_autoencoder.py \
     --dataset_type cfpd \
     --data ./cfp-dataset/Data/Images \
@@ -76,40 +78,45 @@ python gan_autoencoder.py \
     --epochs 50 \
     --batch_size 128 \
     --latent_ch 16
-Description:
+```
+#Description:
 
-Automatically loads CFPD folder structure
+##Automatically loads CFPD folder structure
 
-Trains GAN autoencoder for 50 epochs
+##Trains GAN autoencoder for 50 epochs
 
-Saves metrics, reconstructions, model config, and latents
+##Saves metrics, reconstructions, model config, and latents
+
 ▶ 2. Train on Any Generic Image Dataset
+```bash
 python gan_autoencoder.py \
     --dataset_type image_folder \
     --data ./datasets/CelebA \
     --out runs/gan_ae_celeba \
     --epochs 50 \
     --batch_size 128
-Description:
+```
+#Description:
 
-Uses a standard ImageFolder layout and trains the Autoencoder+GAN on arbitrary datasets.
+##Uses a standard ImageFolder layout and trains the Autoencoder+GAN on arbitrary datasets.
 ▶ 3. Export Latent Vectors (NumPy)
 
 Latents are automatically written during validation at the end of each epoch.
 
 You can manually export a larger set using:
+```bash
 python gan_autoencoder.py \
     --dataset_type image_folder \
     --data ./datasets/IMDb_faces \
     --latents_path runs/imdb_latents.npy \
     --latents_n 5000
-Description:
+#Description:
+```
+##Outputs latent vectors to a single .npy file
 
-Outputs latent vectors to a single .npy file
+##Supports float16 / float32
 
-Supports float16 / float32
-
-Useful for retrieval, clustering, visualization, etc.
+##Useful for retrieval, clustering, visualization, etc.
 
 ▶ 4. Store Latents in Compressed HDF5
 python gan_autoencoder.py \
@@ -118,6 +125,7 @@ python gan_autoencoder.py \
     --latents_path runs/flowers_latent.h5 \
     --store_images_in_h5 \
     --h5_gzip 6
+```
 Description:
 
 *Saves compressed latent tensors
@@ -132,13 +140,13 @@ python gan_autoencoder.py \
     --decode_h5 runs/flowers_latent.h5 \
     --decode_n 5
 ```
-Description:
+#Description:
 
-*Loads latent vectors from HDF5
+##Loads latent vectors from HDF5
 
-*Uses trained decoder to reconstruct images
+##Uses trained decoder to reconstruct images
 
-*Saves side-by-side output grid
+##Saves side-by-side output grid
 
 ▶ 6. Load Checkpoint and Resume Training
 ```bash
@@ -148,11 +156,11 @@ python gan_autoencoder.py \
 python gan_autoencoder.py \
     --save_weights_json
 ```
-Creates:
+#Creates:
 
-model_config.json
+##model_config.json
 
-model_weights.json
+##model_weights.json
 
 📁 Project Structure
 ```bash
@@ -174,9 +182,11 @@ CAE_GAN_Vectorization/
 📜 Citation
 
 If you use this repository in your research, please cite:
+```bash
 @misc{harby2025caegan,
   author       = {Ahmed Harby},
   title        = {CAE–GAN Vectorization Framework},
   year         = {2025},
   howpublished = {\url{https://github.com/HarbyElectro/CAE_GAN_Vectorization}},
 }
+```
