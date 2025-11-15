@@ -97,10 +97,10 @@ python gan_autoencoder.py \
     --data ./datasets/IMDb_faces \
     --latents_path runs/imdb_latents.npy \
     --latents_n 5000
-#Description:
 ```
 
 ▶ 4. Store Latents in Compressed HDF5
+```bash
 python gan_autoencoder.py \
     --dataset_type image_folder \
     --data ./datasets/flowers \
