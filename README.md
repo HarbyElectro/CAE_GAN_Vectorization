@@ -107,7 +107,7 @@ img004.jpg
 ```
 ▶ 1. Train on CFPD Dataset
 ```bash
-python gan_autoencoder.py \
+python Gan_autoencoder_Cfp.py \
     --dataset_type cfpd \
     --data ./cfp-dataset/Data/Images \
     --out runs/gan_ae_cfpd \
@@ -118,7 +118,7 @@ python gan_autoencoder.py \
 
 ▶ 2. Train on Any Generic Image Dataset
 ```bash
-python gan_autoencoder.py \
+python Gan_autoencoder_Cfp.py \
     --dataset_type image_folder \
     --data ./datasets/CelebA \
     --out runs/gan_ae_celeba \
@@ -128,7 +128,7 @@ python gan_autoencoder.py \
 ▶ 3. Export Latent Vectors (NumPy)
 
 ```bash
-python gan_autoencoder.py \
+python Gan_autoencoder_Cfp.py \
     --dataset_type image_folder \
     --data ./datasets/IMDb_faces \
     --latents_path runs/imdb_latents.npy \
@@ -137,7 +137,7 @@ python gan_autoencoder.py \
 
 ▶ 4. Store Latents in Compressed HDF5
 ```bash
-python gan_autoencoder.py \
+python Gan_autoencoder_Cfp.py \
     --dataset_type image_folder \
     --data ./datasets/flowers \
     --latents_path runs/flowers_latent.h5 \
@@ -147,19 +147,19 @@ python gan_autoencoder.py \
 ▶ 5. Decode From Stored Latents (Reconstruction)
 
 ```bash
-python gan_autoencoder.py \
+python Gan_autoencoder_Cfp.py \
     --decode_h5 runs/flowers_latent.h5 \
     --decode_n 5
 ```
 
 ▶ 6. Load Checkpoint and Resume Training
 ```bash
-python gan_autoencoder.py \
+python Gan_autoencoder_Cfp.py \
     --ckpt runs/gan_ae_cfpd/ckpt_epoch050.pt
 ```
 ```bash
 🧩 Model Configuration and Weight Saving
-python gan_autoencoder.py \
+python Gan_autoencoder_Cfp.py \
     --save_weights_json
 ```
 
@@ -167,7 +167,7 @@ python gan_autoencoder.py \
 ```bash
 CAE_GAN_Vectorization/
 │
-├── gan_autoencoder.py          # Main training script
+├── Gan_autoencoder_Cfp.py          # Main training script
 ├── datasets/                   # Your datasets go here
 ├── runs/
 │   ├── gan_ae_cfpd/
