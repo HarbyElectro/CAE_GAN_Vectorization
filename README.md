@@ -46,7 +46,16 @@ Saves encoded features as:
 ```bash
 <output_dir>/celeba_encoded_images.npy
 ```
+🏃 Training the Autoencoder
+# Train on CelebA
+```bash
+python CAE_CelebA.py \
+    --data_dir archive/img_align_celeba \
+    --output_dir runs/celeba_cae \
+    --epochs 100 \
+    --batch_size 64
 
+```
 # GAN Autoencoder for Image Compression and Retrieval
 
 This repository provides a PyTorch implementation of a GAN-style autoencoder for image compression, reconstruction, and latent-based retrieval. The code supports both the CFPD face dataset and any generic image dataset organized in folders.
