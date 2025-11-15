@@ -110,6 +110,7 @@ Outputs latent vectors to a single .npy file
 Supports float16 / float32
 
 Useful for retrieval, clustering, visualization, etc.
+
 ▶ 4. Store Latents in Compressed HDF5
 python gan_autoencoder.py \
     --dataset_type image_folder \
@@ -119,34 +120,42 @@ python gan_autoencoder.py \
     --h5_gzip 6
 Description:
 
-Saves compressed latent tensors
+*Saves compressed latent tensors
 
-Optionally includes reconstructed images
+*Optionally includes reconstructed images
 
-Ideal for large-scale database storage experiments
+*Ideal for large-scale database storage experiments
+
 ▶ 5. Decode From Stored Latents (Reconstruction)
+```bash
 python gan_autoencoder.py \
     --decode_h5 runs/flowers_latent.h5 \
     --decode_n 5
+```
 Description:
 
-Loads latent vectors from HDF5
+*Loads latent vectors from HDF5
 
-Uses trained decoder to reconstruct images
+*Uses trained decoder to reconstruct images
 
-Saves side-by-side output grid
+*Saves side-by-side output grid
+
 ▶ 6. Load Checkpoint and Resume Training
+```bash
 python gan_autoencoder.py \
     --ckpt runs/gan_ae_cfpd/ckpt_epoch050.pt
 🧩 Model Configuration and Weight Saving
 python gan_autoencoder.py \
     --save_weights_json
+```
 Creates:
 
 model_config.json
 
 model_weights.json
+
 📁 Project Structure
+```bash
 CAE_GAN_Vectorization/
 │
 ├── gan_autoencoder.py          # Main training script
@@ -161,6 +170,7 @@ CAE_GAN_Vectorization/
 │   ...
 ├── README.md
 └── requirements.txt
+```
 📜 Citation
 
 If you use this repository in your research, please cite:
