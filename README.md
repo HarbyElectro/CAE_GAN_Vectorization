@@ -15,6 +15,14 @@ dataset/
         img003.jpg
         img004.jpg
 ```
+Configurable Convolutional Autoencoder
+Encoder and decoder architectures with a dense latent bottleneck.
+
+Latent Vector Export
+Saves encoded features as:
+```bash
+<output_dir>/celeba_encoded_images.npy
+```
 
 # GAN Autoencoder for Image Compression and Retrieval
 
