@@ -79,13 +79,6 @@ python gan_autoencoder.py \
     --batch_size 128 \
     --latent_ch 16
 ```
-#Description:
-
-##Automatically loads CFPD folder structure
-
-##Trains GAN autoencoder for 50 epochs
-
-##Saves metrics, reconstructions, model config, and latents
 
 ▶ 2. Train on Any Generic Image Dataset
 ```bash
@@ -96,14 +89,8 @@ python gan_autoencoder.py \
     --epochs 50 \
     --batch_size 128
 ```
-#Description:
-
-##Uses a standard ImageFolder layout and trains the Autoencoder+GAN on arbitrary datasets.
 ▶ 3. Export Latent Vectors (NumPy)
 
-Latents are automatically written during validation at the end of each epoch.
-
-You can manually export a larger set using:
 ```bash
 python gan_autoencoder.py \
     --dataset_type image_folder \
@@ -112,11 +99,6 @@ python gan_autoencoder.py \
     --latents_n 5000
 #Description:
 ```
-##Outputs latent vectors to a single .npy file
-
-##Supports float16 / float32
-
-##Useful for retrieval, clustering, visualization, etc.
 
 ▶ 4. Store Latents in Compressed HDF5
 python gan_autoencoder.py \
@@ -126,41 +108,24 @@ python gan_autoencoder.py \
     --store_images_in_h5 \
     --h5_gzip 6
 ```
-Description:
-
-*Saves compressed latent tensors
-
-*Optionally includes reconstructed images
-
-*Ideal for large-scale database storage experiments
-
 ▶ 5. Decode From Stored Latents (Reconstruction)
+
 ```bash
 python gan_autoencoder.py \
     --decode_h5 runs/flowers_latent.h5 \
     --decode_n 5
 ```
-#Description:
-
-##Loads latent vectors from HDF5
-
-##Uses trained decoder to reconstruct images
-
-##Saves side-by-side output grid
 
 ▶ 6. Load Checkpoint and Resume Training
 ```bash
 python gan_autoencoder.py \
     --ckpt runs/gan_ae_cfpd/ckpt_epoch050.pt
+```
+```bash
 🧩 Model Configuration and Weight Saving
 python gan_autoencoder.py \
     --save_weights_json
 ```
-#Creates:
-
-##model_config.json
-
-##model_weights.json
 
 📁 Project Structure
 ```bash
