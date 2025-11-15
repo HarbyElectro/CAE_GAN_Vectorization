@@ -192,16 +192,16 @@ If you use this repository in your research, please cite:
 }
 ```
 
-#📦 BiLSTM Video Autoencoder for Sequence Compression & Reconstruction
+# 📦 BiLSTM Video Autoencoder for Sequence Compression & Reconstruction
 
-## This repository provides a TensorFlow/Keras implementation of a Conv + BiLSTM video autoencoder, designed for:
+** This repository provides a TensorFlow/Keras implementation of a Conv + BiLSTM video autoencoder, designed for: **
 
-### Video compression via low-dimensional latent vectors
+- Video compression via low-dimensional latent vectors
 
-### Frame-sequence reconstruction
+- Frame-sequence reconstruction
 
-### Ablation across multiple latent space sizes
+- Ablation across multiple latent space sizes
 
-### Evaluation using PSNR and SSIM
+- Evaluation using PSNR and SSIM
 
-### Visualization of reconstruction quality
+- Visualization of reconstruction quality
