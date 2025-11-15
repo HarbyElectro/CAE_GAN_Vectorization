@@ -2,6 +2,29 @@
 
 This repository provides a Keras/TensorFlow implementation of a Convolutional Autoencoder (CAE) for image compression, reconstruction, and latent-space extraction. The training pipeline supports CelebA, CFPW, IMDb Faces, Oxford Flowers, MNIST, and any dataset organized using a standard folder-based structure.
 
+## 🌐 Diverse Dataset Compatibility
+
+This repository is designed for broad dataset support. In addition to CFPD, the training pipeline has been tested on several benchmark datasets across different visual domains:
+
+### ✓ **CFPD (Cross-Pose Face Dataset)**  
+Contains frontal and profile facial views, ideal for evaluating pose-invariant compression and reconstruction.
+
+### ✓ **CelebA**  
+Features over 200,000 celebrity face images with diverse poses, lighting, and attributes, useful for high-variance face reconstruction.
+
+### ✓ **IMDb Faces**  
+Includes 1.2M unconstrained facial images collected from IMDb, enabling large-scale evaluation of model robustness.
+
+### ✓ **Oxford 17/102 Flowers**  
+Provides high-resolution floral images with complex textures and colors, excellent for testing reconstruction fidelity beyond faces.
+
+### ✓ **MNIST**  
+A classic dataset of handwritten digits, ideal for benchmarking autoencoder behavior on simple grayscale images.
+
+All datasets can be used with:
+
+- `--dataset_type image_folder`  
+
 🚀 Features
 
 - **Generic Dataset Loader**
@@ -63,28 +86,6 @@ This repository provides a PyTorch implementation of a GAN-style autoencoder for
 
 ---
 
-## 🌐 Diverse Dataset Compatibility
-
-This repository is designed for broad dataset support. In addition to CFPD, the training pipeline has been tested on several benchmark datasets across different visual domains:
-
-### ✓ **CFPD (Cross-Pose Face Dataset)**  
-Contains frontal and profile facial views, ideal for evaluating pose-invariant compression and reconstruction.
-
-### ✓ **CelebA**  
-Features over 200,000 celebrity face images with diverse poses, lighting, and attributes, useful for high-variance face reconstruction.
-
-### ✓ **IMDb Faces**  
-Includes 1.2M unconstrained facial images collected from IMDb, enabling large-scale evaluation of model robustness.
-
-### ✓ **Oxford 17/102 Flowers**  
-Provides high-resolution floral images with complex textures and colors, excellent for testing reconstruction fidelity beyond faces.
-
-### ✓ **MNIST**  
-A classic dataset of handwritten digits, ideal for benchmarking autoencoder behavior on simple grayscale images.
-
-All datasets can be used with:
-
-- `--dataset_type image_folder`  
 - A directory structure following:
 ```bash
 dataset/
