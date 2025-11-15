@@ -4,8 +4,8 @@ This repository provides a Keras/TensorFlow implementation of a Convolutional Au
 
 🚀 Features
 
-*Generic Dataset Loader
-**Works with any dataset arranged as:
+- **Generic Dataset Loader**
+  -Works with any dataset arranged as:
 ```bash
 dataset/
     class_1/
