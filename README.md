@@ -197,7 +197,7 @@ CAE_GAN_Vectorization/
  
 Train on UCF101 dataset
 ```bash
-python video_autoencoder.py \
+python Video_CAE.py \
     --latent_sizes 16,32,64 \
     --num_frames 20 \
     --num_train 200 \
