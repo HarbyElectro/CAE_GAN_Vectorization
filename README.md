@@ -180,17 +180,6 @@ CAE_GAN_Vectorization/
 ├── README.md
 └── requirements.txt
 ```
-📜 Citation
-
-If you use this repository in your research, please cite:
-```bash
-@misc{harby2025caegan,
-  author       = {Ahmed Harby},
-  title        = {CAE–GAN Vectorization Framework},
-  year         = {2025},
-  howpublished = {\url{https://github.com/HarbyElectro/CAE_GAN_Vectorization}},
-}
-```
 
 # 📦 BiLSTM Video Autoencoder for Sequence Compression & Reconstruction
 
@@ -213,4 +202,15 @@ python video_autoencoder.py \
     --num_frames 20 \
     --num_train 200 \
     --num_test 50
+```
+📜 Citation
+
+If you use this repository in your research, please cite:
+```bash
+@misc{harby2025caegan,
+  author       = {Ahmed Harby},
+  title        = {CAE–GAN Vectorization Framework},
+  year         = {2025},
+  howpublished = {\url{https://github.com/HarbyElectro/CAE_GAN_Vectorization}},
+}
 ```
