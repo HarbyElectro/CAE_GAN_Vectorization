@@ -208,7 +208,7 @@ python Video_CAE.py \
 If you use this repository in your research, please cite:
 ```bash
 @article{harby2025aivectorization,
-  author       = {Harby, Ahmed A. and Zulkernine, Fahim and Abdulsalam, Hany M.},
+  author       = {Harby, Ahmed A. and Zulkernine, F. and Abdulsalam, H. M.},
   title        = {AI-guided Vectorization for Efficient Storage and Semantic Retrieval of Visual Data},
   journal      = {Discover Artificial Intelligence},
   year         = {2025},
