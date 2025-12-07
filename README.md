@@ -207,10 +207,13 @@ python Video_CAE.py \
 
 If you use this repository in your research, please cite:
 ```bash
-@misc{harby2025caegan,
-  author       = {Ahmed Harby},
-  title        = {CAE–GAN Vectorization Framework},
+@article{harby2025aivectorization,
+  author       = {Harby, Ahmed A. and Zulkernine, Fahim and Abdulsalam, Hany M.},
+  title        = {AI-guided Vectorization for Efficient Storage and Semantic Retrieval of Visual Data},
+  journal      = {Discover Artificial Intelligence},
   year         = {2025},
-  howpublished = {\url{https://github.com/HarbyElectro/CAE_GAN_Vectorization}},
+  publisher    = {Springer Nature},
+}
+
 }
 ```
