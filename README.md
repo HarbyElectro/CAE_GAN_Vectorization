@@ -1,133 +1,494 @@
-# AI-Guided Vectorization for Visual Data Compression and Retrieval
+# CAE_GAN_Vectorization
 
-This repository provides research-oriented implementations of autoencoder-based visual data vectorization models for image and video compression, reconstruction, latent-space extraction, and semantic retrieval.
+<h1 align="center">CAE-GAN Vectorization</h1>
 
-The repository includes implementations of:
+<h2 align="center">AI-Guided Visual Data Vectorization for Compression, Reconstruction, and Semantic Retrieval</h2>
+
+<p align="center">
+  <b>Convolutional Autoencoder • GAN Autoencoder • Video Autoencoder • Latent Vector Extraction • Visual Data Reconstruction</b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/HarbyElectro/CAE_GAN_Vectorization">
+    <img src="https://img.shields.io/badge/GitHub-CAE__GAN__Vectorization-black?logo=github" alt="GitHub Repository">
+  </a>
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="Python">
+  <img src="https://img.shields.io/badge/TensorFlow-Keras-orange" alt="TensorFlow Keras">
+  <img src="https://img.shields.io/badge/PyTorch-GAN--AE-red" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Research-Visual%20Data%20Vectorization-green" alt="Research">
+</p>
+
+---
+
+# Overview
+
+`CAE_GAN_Vectorization` is a research-oriented repository for AI-guided visual data vectorization using deep autoencoder models.
+
+The repository provides implementations for:
 
 1. **Convolutional Autoencoder (CAE)** for image compression, reconstruction, and latent-vector extraction.
-2. **GAN-guided Autoencoder (GAN-AE)** for image compression, reconstruction, and latent-based retrieval.
-3. **Conv + BiLSTM Video Autoencoder** for sequence compression and video-frame reconstruction.
+2. **GAN-guided Autoencoder (GAN-AE)** for image compression, reconstruction, adversarial learning, and latent-space export.
+3. **Conv + BiLSTM Video Autoencoder** for video sequence compression and frame reconstruction.
 
-The project is designed as a research foundation for experiments involving latent representation learning, multimedia compression, reconstruction quality evaluation, and efficient storage of visual data.
-
----
-
-## Repository Goals
-
-This repository aims to support research on:
-
-- AI-guided visual data vectorization
-- Image and video compression
-- Autoencoder-based latent representation learning
-- Latent-space extraction and storage
-- Semantic retrieval using compressed visual features
-- Reconstruction quality evaluation
-- Large-scale multimedia storage optimization
-- Comparative analysis of CAE, GAN-AE, and sequence-based autoencoders
+The project is designed to support research on efficient multimedia storage, learned latent representations, visual data reconstruction, and semantic retrieval using compressed feature vectors.
 
 ---
 
-## Main Features
+# Repository Link
 
-- Convolutional Autoencoder for image compression and reconstruction
-- GAN-guided Autoencoder with discriminator-based quality evaluation
-- Conv + BiLSTM video autoencoder for frame-sequence compression
-- Support for multiple image datasets
-- Support for generic folder-based datasets
-- Latent-vector export in NumPy format
-- Optional HDF5 storage for compressed latent vectors and reconstructions
-- Reconstruction quality evaluation using PSNR and SSIM
-- Similarity evaluation using cosine, Manhattan, and Euclidean distances
-- Checkpoint saving and training continuation
-- Experiment output organization for reproducible research
-- Citation-ready format for academic use
+```bash
+https://github.com/HarbyElectro/CAE_GAN_Vectorization
+```
+
+Clone the repository:
+
+```bash
+git clone https://github.com/HarbyElectro/CAE_GAN_Vectorization.git
+cd CAE_GAN_Vectorization
+```
 
 ---
 
-## Supported Models
+# Table of Contents
 
-### 1. Convolutional Autoencoder (CAE)
+- [Overview](#overview)
+- [Research Motivation](#research-motivation)
+- [Main Contributions](#main-contributions)
+- [Current Repository Structure](#current-repository-structure)
+- [Recommended Professional File Structure](#recommended-professional-file-structure)
+- [Core Scripts](#core-scripts)
+- [Supported Models](#supported-models)
+- [Supported Datasets](#supported-datasets)
+- [Installation](#installation)
+- [Dataset Organization](#dataset-organization)
+- [Training and Usage](#training-and-usage)
+- [Latent Vector Export and Storage](#latent-vector-export-and-storage)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Experiment Outputs](#experiment-outputs)
+- [Recommended Research Workflow](#recommended-research-workflow)
+- [Reproducibility Guidelines](#reproducibility-guidelines)
+- [Suggested Additional Files](#suggested-additional-files)
+- [Citation](#citation)
+- [License](#license)
+- [Contact](#contact)
 
-The CAE model is implemented using TensorFlow/Keras and is designed for image compression, reconstruction, and latent-space extraction.
+---
+
+# Research Motivation
+
+Modern multimedia datasets contain large volumes of images and videos. Storing, searching, retrieving, and reconstructing these files efficiently is challenging because raw visual data is large and computationally expensive to process.
+
+This repository investigates the use of deep learning models to encode images and videos into compact latent vectors that can be used for:
+
+- Compression
+- Reconstruction
+- Latent-space analysis
+- Similarity search
+- Semantic retrieval
+- Efficient storage
+- Multimedia indexing
+- Research on AI-guided data vectorization
+
+The project is aligned with research on transforming raw visual data into compact learned representations that preserve important visual and semantic information.
+
+---
+
+# Main Contributions
+
+This repository provides:
+
+- A TensorFlow/Keras **Convolutional Autoencoder** for image compression and reconstruction.
+- A PyTorch **GAN-guided Autoencoder** for image reconstruction and latent-vector extraction.
+- A TensorFlow/Keras **Conv + BiLSTM Video Autoencoder** for video sequence compression.
+- Support for generic image-folder datasets.
+- Support for CFPD-style face datasets.
+- Latent-vector export in NumPy format.
+- Optional HDF5 storage for latent vectors and reconstructed images.
+- Model configuration export in JSON format.
+- Optional model-weight export in JSON format.
+- Reconstruction evaluation using SSIM, MS-SSIM, and PSNR.
+- Similarity evaluation using cosine, Euclidean, and Manhattan distances.
+- GAN discriminator evaluation using precision, recall, and accuracy.
+- A foundation for reproducible research on visual data vectorization.
+
+---
+
+# Current Repository Structure
+
+The current repository contains the following main files:
+
+```bash
+CAE_GAN_Vectorization/
+│
+├── CAE_CelebA.py
+├── Gan_autoencoder_Cfp.py
+├── Video_CAE.py
+└── README.md
+```
+
+---
+
+# Recommended Professional File Structure
+
+The following structure is recommended to make the repository more professional, reproducible, and easier for researchers to extend.
+
+This structure keeps your current scripts while adding folders for datasets, experiment outputs, documentation, configurations, examples, notebooks, and tests.
+
+```bash
+CAE_GAN_Vectorization/
+│
+├── README.md
+├── LICENSE
+├── CITATION.cff
+├── requirements.txt
+├── environment.yml
+├── .gitignore
+│
+├── CAE_CelebA.py
+├── Gan_autoencoder_Cfp.py
+├── Video_CAE.py
+│
+├── data/
+│   ├── README.md
+│   ├── celeba/
+│   │   └── img_align_celeba/
+│   ├── cfpd/
+│   │   └── Data/
+│   │       └── Images/
+│   ├── cfpw/
+│   ├── imdb_faces/
+│   ├── flowers/
+│   ├── mnist/
+│   └── UCF101/
+│
+├── datasets/
+│   ├── README.md
+│   ├── CelebA/
+│   ├── CFPD/
+│   ├── IMDb_faces/
+│   ├── Oxford_Flowers/
+│   └── MNIST/
+│
+├── runs/
+│   ├── README.md
+│   ├── celeba_cae/
+│   │   ├── autoencoder.png
+│   │   ├── encoder.png
+│   │   ├── decoder.png
+│   │   ├── autoencoder_weights.h5
+│   │   └── celeba_encoded_images.npy
+│   │
+│   ├── gan_ae_cfpd/
+│   │   ├── ckpt_epoch001.pt
+│   │   ├── ckpt_epoch050.pt
+│   │   ├── latents.npy
+│   │   ├── latents.h5
+│   │   ├── model_config.json
+│   │   ├── model_weights.json
+│   │   ├── decoded_row5.png
+│   │   ├── train_recon_row5_step0000000.png
+│   │   ├── val_recon_row5_epoch001.png
+│   │   └── image_comparison_results.txt
+│   │
+│   ├── gan_ae_celeba/
+│   │   ├── latents.npy
+│   │   ├── latents.h5
+│   │   ├── model_config.json
+│   │   └── image_comparison_results.txt
+│   │
+│   ├── gan_ae_flowers/
+│   │   ├── flowers_latent.h5
+│   │   ├── decoded_row5.png
+│   │   └── image_comparison_results.txt
+│   │
+│   └── video_ae/
+│       ├── recon_latent8_sample0.png
+│       ├── recon_latent16_sample0.png
+│       ├── recon_latent32_sample0.png
+│       ├── recon_latent64_sample0.png
+│       ├── recon_latent128_sample0.png
+│       ├── reconstruction_loss_comparison.png
+│       └── psnr_ssim_latent_comparison.png
+│
+├── docs/
+│   ├── README.md
+│   ├── datasets.md
+│   ├── experiments.md
+│   ├── model_architectures.md
+│   ├── latent_vector_format.md
+│   ├── metrics.md
+│   └── reproducibility.md
+│
+├── examples/
+│   ├── train_cae_celeba.sh
+│   ├── train_gan_cfpd.sh
+│   ├── train_gan_celeba.sh
+│   ├── train_gan_flowers.sh
+│   ├── export_latents.sh
+│   ├── decode_latents.sh
+│   └── train_video_ucf101.sh
+│
+├── configs/
+│   ├── cae_celeba.yaml
+│   ├── gan_cfpd.yaml
+│   ├── gan_image_folder.yaml
+│   ├── gan_flowers.yaml
+│   └── video_ucf101.yaml
+│
+├── notebooks/
+│   ├── latent_space_visualization.ipynb
+│   ├── reconstruction_comparison.ipynb
+│   ├── retrieval_demo.ipynb
+│   └── compression_analysis.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── datasets/
+│   │   ├── __init__.py
+│   │   ├── image_folder_loader.py
+│   │   ├── cfpd_loader.py
+│   │   ├── celeba_loader.py
+│   │   └── video_loader.py
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── cae.py
+│   │   ├── gan_autoencoder.py
+│   │   └── video_bilstm_autoencoder.py
+│   │
+│   ├── metrics/
+│   │   ├── __init__.py
+│   │   ├── reconstruction_metrics.py
+│   │   ├── similarity_metrics.py
+│   │   └── discriminator_metrics.py
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       ├── checkpoints.py
+│       ├── visualization.py
+│       ├── latent_io.py
+│       ├── hdf5_utils.py
+│       └── config.py
+│
+└── tests/
+    ├── test_datasets.py
+    ├── test_models.py
+    ├── test_metrics.py
+    └── test_latent_io.py
+```
+
+---
+
+# Core Scripts
+
+| Script | Framework | Purpose |
+|---|---|---|
+| `CAE_CelebA.py` | TensorFlow/Keras | Trains a convolutional autoencoder for image compression, reconstruction, and latent-vector extraction. |
+| `Gan_autoencoder_Cfp.py` | PyTorch | Trains a GAN-style autoencoder for image reconstruction, adversarial learning, latent export, HDF5 storage, and evaluation. |
+| `Video_CAE.py` | TensorFlow/Keras | Trains and evaluates a Conv + BiLSTM video autoencoder across multiple latent sizes. |
+
+---
+
+# Supported Models
+
+# 1. Convolutional Autoencoder
+
+Main script:
+
+```bash
+CAE_CelebA.py
+```
+
+The Convolutional Autoencoder is designed for image compression and reconstruction.
 
 It supports:
 
-- CelebA
-- CFPD / CFPW-style face datasets
-- IMDb Faces
-- Oxford 17/102 Flowers
-- MNIST
-- Any folder-based image dataset
+- Image loading
+- Image resizing
+- Encoder-decoder training
+- Dense latent bottleneck extraction
+- Reconstruction learning
+- Autoencoder architecture visualization
+- Encoder architecture visualization
+- Decoder architecture visualization
+- Latent-vector export
 
-The CAE uses an encoder-decoder architecture with a dense latent bottleneck for compact visual representation.
+Important output files:
+
+```bash
+autoencoder.png
+encoder.png
+decoder.png
+autoencoder_weights.h5
+celeba_encoded_images.npy
+```
 
 ---
 
-### 2. GAN-Guided Autoencoder (GAN-AE)
+# 2. GAN-Guided Autoencoder
 
-The GAN-AE model is implemented using PyTorch and combines autoencoder reconstruction with adversarial learning.
+Main script:
+
+```bash
+Gan_autoencoder_Cfp.py
+```
+
+The GAN-guided autoencoder is designed for adversarial reconstruction and latent-space extraction.
 
 It supports:
 
-- CFPD face dataset structure
-- Generic image folders compatible with `torchvision.datasets.ImageFolder`
-- Latent export in NumPy format
-- Optional HDF5 latent storage
-- Checkpoint-based training continuation
+- CFPD dataset layout
+- Generic `ImageFolder` dataset layout
+- Generator-based reconstruction
+- Discriminator-based quality evaluation
+- Latent export to `.npy`
+- Latent and image storage in `.h5`
+- Checkpoint saving
+- Decode-only mode from HDF5 latent files
 - Model configuration export
-- Optional JSON-based model weight export
-- Reconstruction and discriminator-based evaluation metrics
+- Optional model weight export to JSON
 
-The model is useful for studying whether adversarial learning improves reconstruction quality and latent-space representation for image compression and retrieval.
+Important output files:
+
+```bash
+ckpt_epoch001.pt
+ckpt_epoch050.pt
+latents.npy
+latents.h5
+model_config.json
+model_weights.json
+decoded_row5.png
+image_comparison_results.txt
+```
 
 ---
 
-### 3. Conv + BiLSTM Video Autoencoder
+# 3. Conv + BiLSTM Video Autoencoder
 
-The video autoencoder combines convolutional feature extraction with bidirectional LSTM sequence modeling.
+Main script:
 
-It is designed for:
+```bash
+Video_CAE.py
+```
+
+The video autoencoder is designed for sequence compression and frame reconstruction.
+
+It supports:
+
+- Video frame-sequence modeling
+- Convolutional feature extraction
+- Bidirectional LSTM latent encoding
+- Latent-size ablation
+- Reconstruction visualization
+- PSNR evaluation
+- SSIM evaluation
+
+Important output files:
+
+```bash
+recon_latent<size>_sample<index>.png
+reconstruction_loss_comparison.png
+psnr_ssim_latent_comparison.png
+```
+
+---
+
+# Supported Datasets
+
+# CelebA
+
+CelebA contains large-scale celebrity face images with diverse poses, lighting conditions, and facial attributes.
+
+Use cases:
+
+- Face reconstruction
+- Image compression
+- Latent-space representation learning
+
+---
+
+# CFPD / CFPW-Style Face Datasets
+
+CFPD-style datasets include frontal and profile facial views.
+
+Use cases:
+
+- Pose-invariant face reconstruction
+- Face compression
+- Latent robustness testing
+
+Expected CFPD-style structure:
+
+```bash
+cfp-dataset/
+└── Data/
+    └── Images/
+        ├── person_001/
+        │   ├── frontal/
+        │   │   ├── image_001.jpg
+        │   │   └── image_002.jpg
+        │   └── profile_001.jpg
+        └── person_002/
+            ├── frontal/
+            └── profile_001.jpg
+```
+
+---
+
+# IMDb Faces
+
+IMDb Faces contains large-scale unconstrained face images.
+
+Use cases:
+
+- Robust reconstruction testing
+- Large-scale face image compression
+- Generalization evaluation
+
+---
+
+# Oxford 17/102 Flowers
+
+Oxford Flowers datasets contain high-resolution flower images with complex colors and textures.
+
+Use cases:
+
+- Non-face reconstruction testing
+- Texture reconstruction analysis
+- Color-preserving compression
+
+---
+
+# MNIST
+
+MNIST contains handwritten digit images.
+
+Use cases:
+
+- Simple autoencoder benchmarking
+- Low-complexity reconstruction
+- Grayscale image compression
+
+---
+
+# UCF101
+
+UCF101 is a video action-recognition dataset.
+
+Use cases:
 
 - Video sequence compression
 - Frame reconstruction
-- Latent-space ablation studies
-- Reconstruction quality visualization
-- PSNR and SSIM evaluation
-- UCF101-based video experiments
+- Temporal latent-space evaluation
 
 ---
 
-## Dataset Compatibility
+# Generic Folder-Based Image Datasets
 
-This repository is designed for broad dataset compatibility across different visual domains.
+The GAN-AE script supports generic folder-based datasets using `torchvision.datasets.ImageFolder`.
 
-### CFPD / CFPW Face Dataset
-
-Contains frontal and profile facial images and is suitable for evaluating pose-invariant compression and reconstruction.
-
-### CelebA
-
-Contains more than 200,000 celebrity face images with diverse poses, lighting conditions, and facial attributes. It is suitable for high-variance face reconstruction experiments.
-
-### IMDb Faces
-
-Contains large-scale unconstrained facial images collected from IMDb. It is useful for testing model robustness on diverse facial images.
-
-### Oxford 17/102 Flowers
-
-Contains high-resolution flower images with complex colors, textures, and object structures. It is useful for evaluating reconstruction fidelity beyond facial datasets.
-
-### MNIST
-
-A classic handwritten digit dataset useful for benchmarking autoencoder behavior on simple grayscale images.
-
-### UCF101
-
-A widely used video action-recognition dataset suitable for evaluating video sequence compression and reconstruction.
-
-### Generic Folder-Based Image Datasets
-
-Any image dataset organized using a standard folder structure can be used:
+Expected structure:
 
 ```bash
 dataset/
@@ -137,34 +498,97 @@ dataset/
     class_2/
         img003.jpg
         img004.jpg
+```
+
 Use:
+
 ```bash
 --dataset_type image_folder
 ```
+
 ---
-Create a Python environment:
+
+# Installation
+
+# 1. Clone the Repository
+
 ```bash
-conda create -n visual-vectorization python=3.10
-conda activate visual-vectorization
+git clone https://github.com/HarbyElectro/CAE_GAN_Vectorization.git
+cd CAE_GAN_Vectorization
 ```
-Install the required packages:
+
+# 2. Create a Python Environment
+
+```bash
+conda create -n cae-gan-vectorization python=3.10
+conda activate cae-gan-vectorization
+```
+
+# 3. Install Dependencies
+
+If `requirements.txt` is available:
+
 ```bash
 pip install -r requirements.txt
 ```
-Alternatively, if an `environment.yml` file is provided:
+
+If `requirements.txt` is not available yet, install the main dependencies manually:
+
 ```bash
-conda env create -f environment.yml
-conda activate visual-vectorization
+pip install numpy pandas matplotlib scikit-learn scikit-image scipy h5py opencv-python pillow tqdm
+pip install tensorflow
+pip install torch torchvision
 ```
+
 ---
-# Basic Usage
-This repository supports both TensorFlow/Keras and PyTorch-based models.
-- Use the CAE implementation for TensorFlow/Keras image autoencoder experiments.
-- Use the GAN-AE implementation for PyTorch-based adversarial autoencoder experiments.
-- Use the video autoencoder implementation for frame-sequence compression experiments.
+
+# Dataset Organization
+
+Large datasets should not be committed to GitHub.
+
+Recommended local structure:
+
+```bash
+data/
+│
+├── celeba/
+│   └── img_align_celeba/
+│
+├── cfpd/
+│   └── Data/
+│       └── Images/
+│
+├── imdb_faces/
+├── flowers/
+├── mnist/
+└── UCF101/
+```
+
+Recommended `data/README.md`:
+
+```markdown
+# Data Directory
+
+This folder is reserved for local datasets.
+
+Datasets are not tracked by Git because of size and licensing restrictions.
+
+Expected folders:
+
+- `data/celeba/`
+- `data/cfpd/`
+- `data/imdb_faces/`
+- `data/flowers/`
+- `data/mnist/`
+- `data/UCF101/`
+```
+
 ---
-Training Examples
-Train CAE on CelebA
+
+# Training and Usage
+
+# Train CAE on CelebA
+
 ```bash
 python CAE_CelebA.py \
     --data_dir archive/img_align_celeba \
@@ -172,8 +596,34 @@ python CAE_CelebA.py \
     --epochs 100 \
     --batch_size 64
 ```
+
+Recommended organized path:
+
+```bash
+python CAE_CelebA.py \
+    --data_dir data/celeba/img_align_celeba \
+    --output_dir runs/celeba_cae \
+    --image_size 64 \
+    --epochs 100 \
+    --batch_size 64 \
+    --latent_dim 64
+```
+
+Optional quick experiment:
+
+```bash
+python CAE_CelebA.py \
+    --data_dir data/celeba/img_align_celeba \
+    --output_dir runs/celeba_cae_test \
+    --max_images 1000 \
+    --epochs 10 \
+    --batch_size 32
+```
+
 ---
-Train GAN-AE on CFPD Dataset
+
+# Train GAN-AE on CFPD Dataset
+
 ```bash
 python Gan_autoencoder_Cfp.py \
     --dataset_type cfpd \
@@ -183,8 +633,24 @@ python Gan_autoencoder_Cfp.py \
     --batch_size 128 \
     --latent_ch 16
 ```
+
+Recommended organized path:
+
+```bash
+python Gan_autoencoder_Cfp.py \
+    --dataset_type cfpd \
+    --data data/cfpd/Data/Images \
+    --out runs/gan_ae_cfpd \
+    --epochs 50 \
+    --batch_size 128 \
+    --image_size 64 \
+    --latent_ch 16
+```
+
 ---
-Train GAN-AE on Any Generic Image Dataset
+
+# Train GAN-AE on a Generic Image Dataset
+
 ```bash
 python Gan_autoencoder_Cfp.py \
     --dataset_type image_folder \
@@ -193,59 +659,100 @@ python Gan_autoencoder_Cfp.py \
     --epochs 50 \
     --batch_size 128
 ```
+
+Recommended organized path:
+
+```bash
+python Gan_autoencoder_Cfp.py \
+    --dataset_type image_folder \
+    --data data/celeba \
+    --out runs/gan_ae_celeba \
+    --epochs 50 \
+    --batch_size 128 \
+    --image_size 64
+```
+
 ---
-Export Latent Vectors
+
+# Export Latent Vectors
+
+The GAN-AE script exports validation latent vectors after training.
+
 ```bash
 python Gan_autoencoder_Cfp.py \
     --dataset_type image_folder \
     --data ./datasets/IMDb_faces \
-    --latents_path runs/imdb_latents.npy \
+    --out runs/gan_ae_imdb \
+    --latents_path runs/imdb_latents.h5 \
     --latents_n 5000
 ```
-The exported latent vectors are saved as:
+
+The script also saves:
+
 ```bash
-runs/imdb_latents.npy
+runs/gan_ae_imdb/latents.npy
 ```
-Expected latent shape:
+
+Expected NumPy latent shape:
+
 ```bash
 (N, C_lat, H_lat, W_lat)
 ```
+
 ---
-Store Latents in Compressed HDF5 Format
+
+# Store Latents in Compressed HDF5 Format
+
 ```bash
 python Gan_autoencoder_Cfp.py \
     --dataset_type image_folder \
     --data ./datasets/flowers \
+    --out runs/gan_ae_flowers \
     --latents_path runs/flowers_latent.h5 \
     --store_images_in_h5 \
     --h5_gzip 6
 ```
+
 ---
-Decode From Stored Latents
+
+# Decode From Stored Latents
+
 ```bash
 python Gan_autoencoder_Cfp.py \
     --decode_h5 runs/flowers_latent.h5 \
+    --ckpt runs/gan_ae_flowers/ckpt_epoch050.pt \
     --decode_n 5
 ```
+
 ---
-Resume Training From Checkpoint
+
+# Resume or Load From Checkpoint
+
 ```bash
 python Gan_autoencoder_Cfp.py \
     --ckpt runs/gan_ae_cfpd/ckpt_epoch050.pt
 ```
+
 ---
-Save Model Configuration and Weights as JSON
+
+# Save Model Configuration and Weights as JSON
+
 ```bash
 python Gan_autoencoder_Cfp.py \
     --save_weights_json
 ```
-This saves:
+
+This can save:
+
 ```bash
 model_config.json
 model_weights.json
 ```
+
 ---
-Train Video Autoencoder on UCF101
+
+# Train Video Autoencoder
+
 ```bash
 python Video_CAE.py \
     --latent_sizes 16,32,64 \
@@ -253,50 +760,345 @@ python Video_CAE.py \
     --num_train 200 \
     --num_test 50
 ```
----
-Model Outputs
-A typical experiment directory may contain:
+
+Recommended organized output:
+
 ```bash
-runs/gan_ae_cfpd/
-│
-├── ckpt_epoch050.pt
-├── latents.npy
-├── model_config.json
-├── model_weights.json
-├── reconstruction_samples.png
-├── image_comparison_results.txt
-├── metrics.json
-└── logs/
+python Video_CAE.py \
+    --latent_sizes 8,16,32,64,128 \
+    --num_frames 30 \
+    --img_size 224 \
+    --batch_size 16 \
+    --epochs 100 \
+    --output_dir runs/video_ae
 ```
+
 ---
-Latent Vector Storage
-This repository supports latent-vector storage in different formats.
-NumPy Format
+
+# Command-Line Arguments
+
+# CAE_CelebA.py
+
+| Argument | Default | Description |
+|---|---:|---|
+| `--data_dir` | `archive/img_align_celeba` | Path to dataset root directory. |
+| `--output_dir` | `runs/celeba_cae` | Directory for weights, plots, and latents. |
+| `--image_size` | `64` | Input image size. |
+| `--max_images` | `None` | Optional maximum number of images to load. |
+| `--test_split` | `0.2` | Fraction of data used for testing. |
+| `--epochs` | `100` | Number of training epochs. |
+| `--batch_size` | `64` | Training batch size. |
+| `--latent_dim` | `64` | Dense bottleneck latent dimension. |
+
+# Gan_autoencoder_Cfp.py
+
+| Argument | Default | Description |
+|---|---:|---|
+| `--dataset_type` | `cfpd` | Dataset type: `cfpd` or `image_folder`. |
+| `--data` | `./cfp-dataset/Data/Images` | Dataset root directory. |
+| `--out` | `./runs/gan_ae_generic` | Output directory. |
+| `--epochs` | `50` | Number of training epochs. |
+| `--batch_size` | `128` | Training batch size. |
+| `--lr` | `2e-4` | Learning rate. |
+| `--lambda_rec` | `0.6` | Reconstruction loss weight. |
+| `--base_ch` | `64` | Base channel count. |
+| `--latent_ch` | `16` | Latent channel count. |
+| `--image_size` | `64` | Input image size. |
+| `--seed` | `0` | Random seed. |
+| `--cpu` | `False` | Force CPU execution. |
+| `--log_every` | `100` | Logging interval. |
+| `--sample_every` | `500` | Sample output interval. |
+| `--eval_batch` | `16` | Evaluation batch size. |
+| `--eval_n` | `5` | Number of samples for evaluation. |
+| `--pr_threshold` | `0.5` | Discriminator threshold. |
+| `--latents_path` | `./runs/latents.h5` | HDF5 latent output path. |
+| `--latents_n` | `64` | Number of latent vectors to export. |
+| `--latents_dtype` | `float16` | Latent dtype: `float16` or `float32`. |
+| `--disable_h5` | `False` | Disable HDF5 export. |
+| `--store_images_in_h5` | `False` | Store images in HDF5 file. |
+| `--h5_gzip` | `4` | HDF5 gzip compression level. |
+| `--decode_h5` | empty | HDF5 file for decode-only mode. |
+| `--decode_n` | `5` | Number of decoded samples. |
+| `--ckpt` | empty | Checkpoint path. |
+| `--save_weights_json` | `False` | Save model weights as JSON. |
+| `--ckpt_every` | `1` | Checkpoint interval in epochs. |
+
+# Video_CAE.py
+
+| Argument | Default | Description |
+|---|---:|---|
+| `--img_size` | `224` | Frame height and width. |
+| `--num_frames` | `30` | Number of frames per video sequence. |
+| `--channels` | `3` | Number of image channels. |
+| `--batch_size` | `16` | Training batch size. |
+| `--epochs` | `100` | Maximum number of epochs. |
+| `--patience` | `10` | Early stopping patience. |
+| `--latent_sizes` | `8,16,32,64,128` | Latent sizes to evaluate. |
+| `--num_train` | `100` | Number of training sequences. |
+| `--num_test` | `20` | Number of test sequences. |
+| `--output_dir` | `runs/video_ae` | Directory for plots and results. |
+
+---
+
+# Latent Vector Export and Storage
+
+Latent vectors are compact learned representations generated by the encoder.
+
+They can be used for:
+
+- Compression
+- Reconstruction
+- Similarity search
+- Semantic retrieval
+- Multimedia indexing
+- Storage optimization
+
+Supported storage formats include:
+
 ```bash
-latents.npy
+.npy
+.h5
+.json
 ```
-# External inspection and reproducibility metadata
+
 ---
-Evaluation Metrics
+
+# Evaluation Metrics
+
 The repository supports reconstruction, similarity, and discriminator-based metrics.
-Reconstruction Metrics
+
+# Reconstruction Metrics
+
 - Structural Similarity Index Measure (SSIM)
-- Multiscale SSIM
+- Multiscale SSIM (MS-SSIM)
 - Peak Signal-to-Noise Ratio (PSNR)
 - Mean Squared Error (MSE)
 - Mean Absolute Error (MAE)
-- Latent Similarity Metrics
+
+# Latent Similarity Metrics
+
 - Cosine similarity
 - Euclidean distance
 - Manhattan distance
-- GAN Discriminator Metrics
+
+# GAN Discriminator Metrics
+
 - Precision
 - Recall
 - Accuracy
-Real-vs-reconstructed discrimination score
+- Real-vs-reconstructed discriminator score
+
 ---
-Citation
+
+# Experiment Outputs
+
+A typical CAE experiment may produce:
+
+```bash
+runs/celeba_cae/
+│
+├── autoencoder.png
+├── encoder.png
+├── decoder.png
+├── autoencoder_weights.h5
+└── celeba_encoded_images.npy
+```
+
+A typical GAN-AE experiment may produce:
+
+```bash
+runs/gan_ae_cfpd/
+│
+├── ckpt_epoch001.pt
+├── ckpt_epoch050.pt
+├── latents.npy
+├── latents.h5
+├── model_config.json
+├── model_weights.json
+├── decoded_row5.png
+├── val_recon_row5_epoch001.png
+└── image_comparison_results.txt
+```
+
+A typical video autoencoder experiment may produce:
+
+```bash
+runs/video_ae/
+│
+├── recon_latent8_sample0.png
+├── recon_latent16_sample0.png
+├── recon_latent32_sample0.png
+├── recon_latent64_sample0.png
+├── recon_latent128_sample0.png
+├── reconstruction_loss_comparison.png
+└── psnr_ssim_latent_comparison.png
+```
+
+---
+
+# Recommended Research Workflow
+
+1. Select a dataset.
+2. Choose a model architecture:
+   - CAE for image compression.
+   - GAN-AE for adversarial image reconstruction.
+   - Video-AE for sequence compression.
+3. Train the selected model.
+4. Export latent vectors.
+5. Store compressed representations in `.npy` or `.h5` format.
+6. Reconstruct images or video frames from latent vectors.
+7. Evaluate reconstruction quality using PSNR, SSIM, and similarity metrics.
+8. Compare compression ratio, retrieval performance, and reconstruction fidelity.
+9. Save model configuration and experiment metadata.
+10. Report results for reproducible research.
+
+---
+
+# Reproducibility Guidelines
+
+For each experiment, save the following information:
+
+- Model name
+- Dataset name
+- Dataset path
+- Image resolution
+- Number of frames for video experiments
+- Latent dimension
+- Batch size
+- Number of epochs
+- Optimizer type
+- Learning rate
+- Random seed
+- Checkpoint path
+- Latent-vector output path
+- Reconstruction metrics
+- Similarity metrics
+- Hardware information
+- Software versions
+
+Recommended metadata files:
+
+```bash
+model_config.json
+image_comparison_results.txt
+```
+
+---
+
+# Suggested Additional Files
+
+The following files are recommended for improving the repository.
+
+---
+
+## Suggested `.gitignore`
+
+```gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+conda-env/
+*.egg-info/
+
+# Data
+data/*
+!data/README.md
+datasets/*
+!datasets/README.md
+
+# Experiment outputs
+runs/*
+!runs/README.md
+checkpoints/
+outputs/
+logs/
+
+# Model files
+*.pt
+*.pth
+*.h5
+*.keras
+*.ckpt
+
+# Latent vectors
+*.npy
+*.npz
+
+# Generated images and videos
+*.mp4
+*.avi
+*.mov
+
+# OS files
+.DS_Store
+Thumbs.db
+```
+
+---
+
+## Suggested `requirements.txt`
+
+```txt
+numpy
+pandas
+matplotlib
+scikit-learn
+scikit-image
+scipy
+h5py
+opencv-python
+pillow
+tqdm
+tensorflow
+torch
+torchvision
+```
+
+---
+
+## Suggested `CITATION.cff`
+
+```yaml
+cff-version: 1.2.0
+title: "CAE-GAN Vectorization"
+message: "If you use this repository in your research, please cite this work."
+type: software
+authors:
+  - family-names: Harby
+    given-names: Ahmed A.
+repository-code: "https://github.com/HarbyElectro/CAE_GAN_Vectorization"
+year: 2025
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Harby
+      given-names: Ahmed A.
+    - family-names: Zulkernine
+      given-names: F.
+    - family-names: Abdulsalam
+      given-names: H. M.
+  title: "AI-guided Vectorization for Efficient Storage and Semantic Retrieval of Visual Data"
+  journal: "Discover Artificial Intelligence"
+  year: 2025
+  publisher:
+    name: "Springer Nature"
+```
+
+---
+
+# Citation
+
 If you use this repository in your research, please cite:
+
 ```bibtex
 @article{harby2025aivectorization,
   author       = {Harby, Ahmed A. and Zulkernine, F. and Abdulsalam, H. M.},
@@ -306,6 +1108,61 @@ If you use this repository in your research, please cite:
   publisher    = {Springer Nature}
 }
 ```
+
 ---
-Acknowledgment
+
+# Suggested GitHub Repository Description
+
+```text
+Research framework for AI-guided visual data vectorization using convolutional, GAN-based, and video autoencoders for compression, reconstruction, latent extraction, and semantic retrieval.
+```
+
+---
+
+# Suggested GitHub Topics
+
+```text
+autoencoder
+image-compression
+video-compression
+latent-space
+semantic-retrieval
+computer-vision
+deep-learning
+tensorflow
+pytorch
+gan
+representation-learning
+visual-data-vectorization
+multimedia-compression
+```
+
+---
+
+# License
+
+Please add a license before public release.
+
+Recommended licenses for academic research software:
+
+- MIT License
+- Apache License 2.0
+- BSD 3-Clause License
+
+---
+
+# Contact
+
+Repository maintainer:
+
+```text
+Ahmed A. Harby
+GitHub: https://github.com/HarbyElectro
+Repository: https://github.com/HarbyElectro/CAE_GAN_Vectorization
+```
+
+---
+
+# Acknowledgment
+
 This repository was developed as part of research on AI-guided visual data vectorization, efficient multimedia storage, and semantic retrieval using learned latent representations.

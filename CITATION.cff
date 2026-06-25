@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "CAE-GAN Vectorization"
+message: "If you use this repository in your research, please cite this work."
+type: software
+authors:
+  - family-names: Harby
+    given-names: Ahmed A.
+repository-code: "https://github.com/HarbyElectro/CAE_GAN_Vectorization"
+year: 2025
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Harby
+      given-names: Ahmed A.
+    - family-names: Zulkernine
+      given-names: F.
+    - family-names: Abdulsalam
+      given-names: H. M.
+  title: "AI-guided Vectorization for Efficient Storage and Semantic Retrieval of Visual Data"
+  journal: "Discover Artificial Intelligence"
+  year: 2025
+  publisher:
+    name: "Springer Nature"
