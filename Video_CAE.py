@@ -9,7 +9,6 @@ computes PSNR and SSIM for each configuration.
 By default, it uses dummy random data. To use real videos, replace the
 `generate_dummy_data` function with a call to `load_video` or a custom loader.
 """
-
 import os
 import argparse
 
