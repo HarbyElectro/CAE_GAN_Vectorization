@@ -65,9 +65,7 @@ cd CAE_GAN_Vectorization
 - [Experiment Outputs](#experiment-outputs)
 - [Recommended Research Workflow](#recommended-research-workflow)
 - [Reproducibility Guidelines](#reproducibility-guidelines)
-- [Suggested Additional Files](#suggested-additional-files)
 - [Citation](#citation)
-- [License](#license)
 - [Contact](#contact)
 
 ---
