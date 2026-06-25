@@ -243,11 +243,11 @@ conda env create -f environment.yml
 conda activate visual-vectorization
 ```
 ---
-Basic Usage
+# Basic Usage
 This repository supports both TensorFlow/Keras and PyTorch-based models.
-Use the CAE implementation for TensorFlow/Keras image autoencoder experiments.
-Use the GAN-AE implementation for PyTorch-based adversarial autoencoder experiments.
-Use the video autoencoder implementation for frame-sequence compression experiments.
+- Use the CAE implementation for TensorFlow/Keras image autoencoder experiments.
+- Use the GAN-AE implementation for PyTorch-based adversarial autoencoder experiments.
+- Use the video autoencoder implementation for frame-sequence compression experiments.
 ---
 Training Examples
 Train CAE on CelebA
@@ -258,30 +258,12 @@ python CAE_CelebA.py \
     --epochs 100 \
     --batch_size 64
 ```
-Organized version:
-```bash
-python scripts/train_cae.py \
-    --data_dir data/celeba/img_align_celeba \
-    --output_dir runs/cae_celeba \
-    --epochs 100 \
-    --batch_size 64
-```
 ---
 Train GAN-AE on CFPD Dataset
 ```bash
 python Gan_autoencoder_Cfp.py \
     --dataset_type cfpd \
     --data ./cfp-dataset/Data/Images \
-    --out runs/gan_ae_cfpd \
-    --epochs 50 \
-    --batch_size 128 \
-    --latent_ch 16
-```
-Organized version:
-```bash
-python scripts/train_gan_autoencoder.py \
-    --dataset_type cfpd \
-    --data data/cfpd/Data/Images \
     --out runs/gan_ae_cfpd \
     --epochs 50 \
     --batch_size 128 \
@@ -297,30 +279,12 @@ python Gan_autoencoder_Cfp.py \
     --epochs 50 \
     --batch_size 128
 ```
-Organized version:
-```bash
-python scripts/train_gan_autoencoder.py \
-    --dataset_type image_folder \
-    --data data/celeba \
-    --out runs/gan_ae_celeba \
-    --epochs 50 \
-    --batch_size 128
-```
 ---
 Export Latent Vectors
 ```bash
 python Gan_autoencoder_Cfp.py \
     --dataset_type image_folder \
     --data ./datasets/IMDb_faces \
-    --latents_path runs/imdb_latents.npy \
-    --latents_n 5000
-```
-Organized version:
-```bash
-python scripts/export_latents.py \
-    --model_type gan_ae \
-    --checkpoint runs/gan_ae_celeba/ckpt_epoch050.pt \
-    --data data/imdb_faces \
     --latents_path runs/imdb_latents.npy \
     --latents_n 5000
 ```
