@@ -520,7 +520,7 @@ pip install torch torchvision
 
 Large datasets should not be committed to GitHub.
 
-Recommended local structure:
+Local structure:
 
 ```bash
 data/
@@ -537,8 +537,6 @@ data/
 ├── mnist/
 └── UCF101/
 ```
-
-Recommended `data/README.md`:
 
 ```markdown
 # Data Directory
@@ -562,16 +560,6 @@ Expected folders:
 # Training and Usage
 
 # Train CAE on CelebA
-
-```bash
-python CAE_CelebA.py \
-    --data_dir archive/img_align_celeba \
-    --output_dir runs/celeba_cae \
-    --epochs 100 \
-    --batch_size 64
-```
-
-Recommended organized path:
 
 ```bash
 python CAE_CelebA.py \
@@ -601,18 +589,6 @@ python CAE_CelebA.py \
 ```bash
 python Gan_autoencoder_Cfp.py \
     --dataset_type cfpd \
-    --data ./cfp-dataset/Data/Images \
-    --out runs/gan_ae_cfpd \
-    --epochs 50 \
-    --batch_size 128 \
-    --latent_ch 16
-```
-
-Recommended organized path:
-
-```bash
-python Gan_autoencoder_Cfp.py \
-    --dataset_type cfpd \
     --data data/cfpd/Data/Images \
     --out runs/gan_ae_cfpd \
     --epochs 50 \
@@ -624,17 +600,6 @@ python Gan_autoencoder_Cfp.py \
 ---
 
 # Train GAN-AE on a Generic Image Dataset
-
-```bash
-python Gan_autoencoder_Cfp.py \
-    --dataset_type image_folder \
-    --data ./datasets/CelebA \
-    --out runs/gan_ae_celeba \
-    --epochs 50 \
-    --batch_size 128
-```
-
-Recommended organized path:
 
 ```bash
 python Gan_autoencoder_Cfp.py \
@@ -726,16 +691,6 @@ model_weights.json
 ---
 
 # Train Video Autoencoder
-
-```bash
-python Video_CAE.py \
-    --latent_sizes 16,32,64 \
-    --num_frames 20 \
-    --num_train 200 \
-    --num_test 50
-```
-
-Recommended organized output:
 
 ```bash
 python Video_CAE.py \
