@@ -974,16 +974,6 @@ For each experiment, save the following information:
 - Hardware information
 - Software versions
 
-Recommended metadata files:
-
-```bash
-model_config.json
-image_comparison_results.txt
-```
-
----
-
-
 ---
 
 # Citation
@@ -1001,28 +991,6 @@ If you use this repository in your research, please cite:
 ```
 
 ---
-
-
-
----
-
-# Suggested GitHub Topics
-
-```text
-autoencoder
-image-compression
-video-compression
-latent-space
-semantic-retrieval
-computer-vision
-deep-learning
-tensorflow
-pytorch
-gan
-representation-learning
-visual-data-vectorization
-multimedia-compression
-```
 
 # Contact
 
