@@ -7,9 +7,6 @@ Features:
 - Latent vectors exported as NumPy .npy
 - Model architecture and learned weights saved to JSON
 - Optional HDF5 latent export for compression analysis
-
-Original author: Ahmed Harby
-Updated for generic usage and GitHub release
 """
 
 import os, argparse, random, math, json
