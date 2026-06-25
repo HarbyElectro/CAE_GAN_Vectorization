@@ -367,51 +367,46 @@ JSON Format
 model_config.json
 model_weights.json
 ```
-External inspection and reproducibility metadata.
+#External inspection and reproducibility metadata.
 ---
 Evaluation Metrics
 The repository supports reconstruction, similarity, and discriminator-based metrics.
 Reconstruction Metrics
-Structural Similarity Index Measure (SSIM)
-Multiscale SSIM
-Peak Signal-to-Noise Ratio (PSNR)
-Mean Squared Error (MSE)
-Mean Absolute Error (MAE)
-Latent Similarity Metrics
-Cosine similarity
-Euclidean distance
-Manhattan distance
-GAN Discriminator Metrics
-Precision
-Recall
-Accuracy
+- Structural Similarity Index Measure (SSIM)
+- Multiscale SSIM
+- Peak Signal-to-Noise Ratio (PSNR)
+- Mean Squared Error (MSE)
+- Mean Absolute Error (MAE)
+- Latent Similarity Metrics
+- Cosine similarity
+- Euclidean distance
+- Manhattan distance
+- GAN Discriminator Metrics
+- Precision
+- Recall
+- Accuracy
 Real-vs-reconstructed discrimination score
 ---
 Reproducibility Guidelines
 For each experiment, the following information should be saved:
-Model type
-Dataset name
-Dataset path
-Image resolution
-Number of frames for video experiments
-Latent dimension
-Batch size
-Number of epochs
-Optimizer settings
-Learning rate
-Random seed
-Checkpoint path
-Reconstruction metrics
-Latent-vector output path
+- Model type
+- Dataset name
+- Dataset path
+- Image resolution
+- Number of frames for video experiments
+- Latent dimension
+- Batch size
+- Number of epochs
+- Optimizer settings
+- Learning rate
+- Random seed
+- Checkpoint path
+- Reconstruction metrics
+- Latent-vector output path
 Software versions
-Recommended command format:
-```bash
-python scripts/train_gan_autoencoder.py \
-    --config configs/gan_image_folder.yaml \
-    --seed 42
-```
+
 ---
-Recommended Research Workflow
+Research Workflow
 Select a dataset.
 Choose a model architecture:
 CAE for image compression
@@ -491,50 +486,6 @@ This folder stores experiment outputs such as:
 Generated experiment files are not tracked by Git.
 ```
 ---
-Suggested `.gitignore`
-```gitignore
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.pytest_cache/
-.ipynb_checkpoints/
-
-# Environments
-.env
-.venv/
-venv/
-conda-env/
-*.egg-info/
-
-# Data
-data/*
-!data/README.md
-
-# Experiment outputs
-runs/*
-!runs/README.md
-checkpoints/
-outputs/
-logs/
-
-# Model files
-*.pt
-*.pth
-*.h5
-*.keras
-*.ckpt
-
-# Latent vectors
-*.npy
-*.npz
-
-# OS files
-.DS_Store
-Thumbs.db
-```
----
 Citation
 If you use this repository in your research, please cite:
 ```bibtex
@@ -546,68 +497,6 @@ If you use this repository in your research, please cite:
   publisher    = {Springer Nature}
 }
 ```
----
-Recommended `CITATION.cff`
-You may also add a `CITATION.cff` file to the repository:
-```yaml
-cff-version: 1.2.0
-title: "AI-Guided Vectorization for Efficient Storage and Semantic Retrieval of Visual Data"
-message: "If you use this repository in your research, please cite this work."
-type: software
-authors:
-  - family-names: Harby
-    given-names: Ahmed A.
-  - family-names: Zulkernine
-    given-names: F.
-  - family-names: Abdulsalam
-    given-names: H. M.
-year: 2025
-repository-code: "https://github.com/your-username/AI-Vectorization-Autoencoders"
-preferred-citation:
-  type: article
-  authors:
-    - family-names: Harby
-      given-names: Ahmed A.
-    - family-names: Zulkernine
-      given-names: F.
-    - family-names: Abdulsalam
-      given-names: H. M.
-  title: "AI-guided Vectorization for Efficient Storage and Semantic Retrieval of Visual Data"
-  journal: "Discover Artificial Intelligence"
-  year: 2025
-  publisher:
-    name: "Springer Nature"
-```
----
-Suggested GitHub Repository Description
-```text
-Research framework for AI-guided visual data vectorization using convolutional, GAN-based, and video autoencoders for compression, reconstruction, latent extraction, and semantic retrieval.
-```
----
-Suggested GitHub Topics
-```text
-autoencoder
-image-compression
-video-compression
-latent-space
-semantic-retrieval
-computer-vision
-deep-learning
-tensorflow
-pytorch
-gan
-representation-learning
-visual-data-vectorization
-multimedia-compression
-```
----
-License
-Please specify a license before public release.
-Recommended options for academic research software:
-MIT License
-Apache License 2.0
-BSD 3-Clause License
----
 Contact
 For questions, research collaboration, or citation-related inquiries, please contact the repository maintainer.
 ---
