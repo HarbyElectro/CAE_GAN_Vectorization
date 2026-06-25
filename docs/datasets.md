@@ -199,14 +199,6 @@ python Video_CAE.py \
   --output_dir runs/video_ae
 ```
 
----
-
-## GitHub Dataset Policy
-
-Do not upload large datasets to GitHub.
-
-Use this `.gitignore` rule:
-
 ```gitignore
 data/*
 !data/README.md
