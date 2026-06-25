@@ -202,12 +202,3 @@ runs/video_ae/
 ```
 
 ---
-
-## Recommended Reporting Table
-
-| Model | Dataset | Latent Size | PSNR | SSIM | Compression Ratio |
-|---|---|---:|---:|---:|---:|
-| CAE | CelebA | 64 | TBD | TBD | TBD |
-| GAN-AE | CFPD | 16 channels | TBD | TBD | TBD |
-| GAN-AE | Flowers | 16 channels | TBD | TBD | TBD |
-| Video-AE | UCF101 | 64 | TBD | TBD | TBD |
