@@ -50,7 +50,7 @@ cd CAE_GAN_Vectorization
 - [Overview](#overview)
 - [Research Motivation](#research-motivation)
 - [Main Contributions](#main-contributions)
-- [Repository Structure](#current-repository-structure)
+- [Repository Structure](#repository-structure)
 - [Core Scripts](#core-scripts)
 - [Supported Models](#supported-models)
 - [Supported Datasets](#supported-datasets)
@@ -60,7 +60,7 @@ cd CAE_GAN_Vectorization
 - [Latent Vector Export and Storage](#latent-vector-export-and-storage)
 - [Evaluation Metrics](#evaluation-metrics)
 - [Experiment Outputs](#experiment-outputs)
-- [Research Workflow](#recommended-research-workflow)
+- [Research Workflow](#research-workflow)
 - [Citation](#citation)
 - [Contact](#contact)
 
