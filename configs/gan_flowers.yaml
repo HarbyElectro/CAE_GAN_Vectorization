@@ -1,0 +1,50 @@
+experiment:
+  name: gan_ae_flowers
+  description: GAN-guided Autoencoder trained on Oxford Flowers or a similar flower image dataset.
+  output_dir: runs/gan_ae_flowers
+  seed: 42
+
+dataset:
+  name: OxfordFlowers
+  type: image_folder
+  data_dir: data/flowers
+  image_size: 64
+  channels: 3
+
+model:
+  name: gan_autoencoder
+  framework: pytorch
+  base_channels: 64
+  latent_channels: 16
+
+training:
+  epochs: 50
+  batch_size: 128
+  optimizer: adam
+  learning_rate: 0.0002
+  reconstruction_loss_weight: 0.6
+  checkpoint_every: 1
+
+evaluation:
+  eval_batch: 16
+  eval_n: 5
+  discriminator_threshold: 0.5
+  metrics:
+    - ssim
+    - ms_ssim
+    - psnr
+    - cosine_similarity
+    - euclidean_distance
+    - manhattan_distance
+
+outputs:
+  save_checkpoints: true
+  checkpoint_dir: runs/gan_ae_flowers
+  save_latents: true
+  latents_path: runs/flowers_latent.h5
+  latents_n: 5000
+  latents_dtype: float16
+  store_images_in_h5: true
+  h5_gzip: 6
+  save_model_config: true
+  save_weights_json: false

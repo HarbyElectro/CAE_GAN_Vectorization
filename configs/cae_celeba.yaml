@@ -1,0 +1,33 @@
+experiment:
+  name: cae_celeba
+  description: Convolutional Autoencoder trained on CelebA for image compression and latent-vector extraction.
+  output_dir: runs/celeba_cae
+  seed: 42
+
+dataset:
+  name: CelebA
+  type: image_folder
+  data_dir: data/celeba/img_align_celeba
+  image_size: 64
+  channels: 3
+  test_split: 0.2
+  max_images: null
+
+model:
+  name: convolutional_autoencoder
+  framework: tensorflow_keras
+  latent_dim: 64
+
+training:
+  epochs: 100
+  batch_size: 64
+  optimizer: adam
+  learning_rate: 0.001
+  loss: binary_crossentropy
+
+outputs:
+  save_weights: true
+  weights_path: runs/celeba_cae/autoencoder_weights.h5
+  save_latents: true
+  latents_path: runs/celeba_cae/celeba_encoded_images.npy
+  save_model_plots: true

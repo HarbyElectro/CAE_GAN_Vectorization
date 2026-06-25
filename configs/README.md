@@ -2,7 +2,9 @@
 
 This folder contains experiment configuration files for the models in this repository.
 
-Each configuration file stores dataset paths, model settings, training parameters, and output locations.
+Each configuration file stores dataset paths, model settings, training parameters, evaluation settings, and output locations.
+
+These files are useful for reproducible research because they document the exact settings used for each experiment.
 
 ## Files
 
@@ -14,4 +16,4 @@ Each configuration file stores dataset paths, model settings, training parameter
 
 ## Note
 
-The current scripts mainly use command-line arguments. These YAML files are provided to document recommended experiment settings and can be used later if the scripts are extended to support `--config`.
+The current scripts mainly use command-line arguments. These YAML files are provided to document recommended experiment settings and can be used later if the scripts are extended to support a `--config` argument.

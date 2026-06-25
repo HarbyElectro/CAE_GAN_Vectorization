@@ -1,0 +1,53 @@
+experiment:
+  name: gan_ae_cfpd
+  description: GAN-guided Autoencoder trained on CFPD-style face dataset.
+  output_dir: runs/gan_ae_cfpd
+  seed: 42
+
+dataset:
+  name: CFPD
+  type: cfpd
+  data_dir: data/cfpd/Data/Images
+  image_size: 64
+  channels: 3
+
+model:
+  name: gan_autoencoder
+  framework: pytorch
+  base_channels: 64
+  latent_channels: 16
+
+training:
+  epochs: 50
+  batch_size: 128
+  optimizer: adam
+  learning_rate: 0.0002
+  reconstruction_loss_weight: 0.6
+  checkpoint_every: 1
+
+evaluation:
+  eval_batch: 16
+  eval_n: 5
+  discriminator_threshold: 0.5
+  metrics:
+    - ssim
+    - ms_ssim
+    - psnr
+    - cosine_similarity
+    - euclidean_distance
+    - manhattan_distance
+    - precision
+    - recall
+    - accuracy
+
+outputs:
+  save_checkpoints: true
+  checkpoint_dir: runs/gan_ae_cfpd
+  save_latents: true
+  latents_path: runs/gan_ae_cfpd/latents.h5
+  latents_n: 5000
+  latents_dtype: float16
+  save_model_config: true
+  save_weights_json: false
+  store_images_in_h5: false
+  h5_gzip: 4
