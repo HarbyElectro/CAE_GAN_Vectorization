@@ -403,88 +403,7 @@ For each experiment, the following information should be saved:
 - Checkpoint path
 - Reconstruction metrics
 - Latent-vector output path
-Software versions
 
----
-Research Workflow
-Select a dataset.
-Choose a model architecture:
-CAE for image compression
-GAN-AE for adversarial image reconstruction
-Video-AE for sequence compression
-Train the model.
-Export latent vectors.
-Store compressed representations in `.npy` or `.h5` format.
-Reconstruct images or video frames from latent vectors.
-Evaluate reconstruction quality using PSNR, SSIM, and similarity metrics.
-Compare compression ratio, retrieval performance, and reconstruction fidelity.
-Save model configuration and experiment metadata.
-Report results for reproducible research.
----
-Example Research Questions
-This repository can support experiments such as:
-How does latent-space size affect reconstruction quality?
-How do CAE and GAN-AE models compare for face reconstruction?
-Can compressed latent vectors support semantic retrieval?
-How does reconstruction quality vary across faces, flowers, digits, and videos?
-What is the trade-off between compression ratio and visual fidelity?
-How well do models generalize across visual domains?
-Can latent-vector storage improve multimedia lakehouse efficiency?
----
-Notes on Dataset Storage
-Large datasets should not be committed to GitHub.
-Recommended local structure:
-```bash
-data/
-│
-├── celeba/
-├── cfpd/
-├── imdb_faces/
-├── flowers/
-├── mnist/
-└── UCF101/
-```
-Add a `data/README.md` file explaining where datasets should be placed.
-Example:
-```markdown
-# Data Directory
-
-This folder is reserved for local datasets.
-
-Datasets are not tracked by Git because of size and licensing restrictions.
-
-Expected structure:
-
-- `data/celeba/`
-- `data/cfpd/`
-- `data/imdb_faces/`
-- `data/flowers/`
-- `data/mnist/`
-- `data/UCF101/`
-```
----
-Notes on Experiment Outputs
-Experiment outputs should be saved under:
-```bash
-runs/
-```
-The `runs/` directory may contain checkpoints, latent vectors, reconstructions, logs, and evaluation reports.
-These files are usually not tracked by Git.
-Add a `runs/README.md` file explaining the purpose of this folder.
-Example:
-```markdown
-# Runs Directory
-
-This folder stores experiment outputs such as:
-
-- Model checkpoints
-- Latent vectors
-- Reconstruction images
-- Metric reports
-- Logs
-
-Generated experiment files are not tracked by Git.
-```
 ---
 Citation
 If you use this repository in your research, please cite:
@@ -497,8 +416,6 @@ If you use this repository in your research, please cite:
   publisher    = {Springer Nature}
 }
 ```
-Contact
-For questions, research collaboration, or citation-related inquiries, please contact the repository maintainer.
 ---
 Acknowledgment
 This repository was developed as part of research on AI-guided visual data vectorization, efficient multimedia storage, and semantic retrieval using learned latent representations.
