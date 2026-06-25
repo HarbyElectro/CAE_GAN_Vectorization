@@ -912,8 +912,6 @@ Repository: https://github.com/HarbyElectro/CAE_GAN_Vectorization
 
 # Acknowledgment
 
-## Acknowledgment
-
 This repository was developed as part of a PhD research work focused on AI-guided visual data vectorization, efficient multimedia storage, and semantic retrieval using learned latent representations.
 
 This work is associated with **BAMLab Research** and was conducted under the supervision of **Prof. Farhana Zulkernine**.
