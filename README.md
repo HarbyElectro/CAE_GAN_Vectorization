@@ -107,23 +107,7 @@ This repository provides:
 
 ---
 
-# Current Repository Structure
-
-The current repository contains the following main files:
-
-```bash
-CAE_GAN_Vectorization/
-│
-├── CAE_CelebA.py
-├── Gan_autoencoder_Cfp.py
-├── Video_CAE.py
-└── README.md
-```
-
----
-
-# Recommended Professional File Structure
-
+# Repository Structure
 The following structure is recommended to make the repository more professional, reproducible, and easier for researchers to extend.
 
 This structure keeps your current scripts while adding folders for datasets, experiment outputs, documentation, configurations, examples, notebooks, and tests.
