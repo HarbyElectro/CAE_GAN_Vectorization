@@ -1,87 +1,134 @@
-AI-Guided Vectorization for Visual Data Compression and Retrieval
+# AI-Guided Vectorization for Visual Data Compression and Retrieval
+
 This repository provides research-oriented implementations of autoencoder-based visual data vectorization models for image and video compression, reconstruction, latent-space extraction, and semantic retrieval.
+
 The repository includes implementations of:
-Convolutional Autoencoder (CAE) for image compression, reconstruction, and latent-vector extraction.
-GAN-guided Autoencoder (GAN-AE) for image compression, reconstruction, and latent-based retrieval.
-Conv + BiLSTM Video Autoencoder for sequence compression and video-frame reconstruction.
+
+1. **Convolutional Autoencoder (CAE)** for image compression, reconstruction, and latent-vector extraction.
+2. **GAN-guided Autoencoder (GAN-AE)** for image compression, reconstruction, and latent-based retrieval.
+3. **Conv + BiLSTM Video Autoencoder** for sequence compression and video-frame reconstruction.
+
 The project is designed as a research foundation for experiments involving latent representation learning, multimedia compression, reconstruction quality evaluation, and efficient storage of visual data.
+
 ---
-Repository Goals
+
+## Repository Goals
+
 This repository aims to support research on:
-AI-guided visual data vectorization
-Image and video compression
-Autoencoder-based latent representation learning
-Latent-space extraction and storage
-Semantic retrieval using compressed visual features
-Reconstruction quality evaluation
-Large-scale multimedia storage optimization
-Comparative analysis of CAE, GAN-AE, and sequence-based autoencoders
+
+- AI-guided visual data vectorization
+- Image and video compression
+- Autoencoder-based latent representation learning
+- Latent-space extraction and storage
+- Semantic retrieval using compressed visual features
+- Reconstruction quality evaluation
+- Large-scale multimedia storage optimization
+- Comparative analysis of CAE, GAN-AE, and sequence-based autoencoders
+
 ---
-Main Features
-Convolutional Autoencoder for image compression and reconstruction
-GAN-guided Autoencoder with discriminator-based quality evaluation
-Conv + BiLSTM video autoencoder for frame-sequence compression
-Support for multiple image datasets
-Support for generic folder-based datasets
-Latent-vector export in NumPy format
-Optional HDF5 storage for compressed latent vectors and reconstructions
-Reconstruction quality evaluation using PSNR and SSIM
-Similarity evaluation using cosine, Manhattan, and Euclidean distances
-Checkpoint saving and training continuation
-Experiment output organization for reproducible research
-Citation-ready format for academic use
+
+## Main Features
+
+- Convolutional Autoencoder for image compression and reconstruction
+- GAN-guided Autoencoder with discriminator-based quality evaluation
+- Conv + BiLSTM video autoencoder for frame-sequence compression
+- Support for multiple image datasets
+- Support for generic folder-based datasets
+- Latent-vector export in NumPy format
+- Optional HDF5 storage for compressed latent vectors and reconstructions
+- Reconstruction quality evaluation using PSNR and SSIM
+- Similarity evaluation using cosine, Manhattan, and Euclidean distances
+- Checkpoint saving and training continuation
+- Experiment output organization for reproducible research
+- Citation-ready format for academic use
+
 ---
-Supported Models
-1. Convolutional Autoencoder (CAE)
+
+## Supported Models
+
+### 1. Convolutional Autoencoder (CAE)
+
 The CAE model is implemented using TensorFlow/Keras and is designed for image compression, reconstruction, and latent-space extraction.
+
 It supports:
-CelebA
-CFPD / CFPW-style face datasets
-IMDb Faces
-Oxford 17/102 Flowers
-MNIST
-Any folder-based image dataset
+
+- CelebA
+- CFPD / CFPW-style face datasets
+- IMDb Faces
+- Oxford 17/102 Flowers
+- MNIST
+- Any folder-based image dataset
+
 The CAE uses an encoder-decoder architecture with a dense latent bottleneck for compact visual representation.
+
 ---
-2. GAN-Guided Autoencoder (GAN-AE)
+
+### 2. GAN-Guided Autoencoder (GAN-AE)
+
 The GAN-AE model is implemented using PyTorch and combines autoencoder reconstruction with adversarial learning.
+
 It supports:
-CFPD face dataset structure
-Generic image folders compatible with `torchvision.datasets.ImageFolder`
-Latent export in NumPy format
-Optional HDF5 latent storage
-Checkpoint-based training continuation
-Model configuration export
-Optional JSON-based model weight export
-Reconstruction and discriminator-based evaluation metrics
+
+- CFPD face dataset structure
+- Generic image folders compatible with `torchvision.datasets.ImageFolder`
+- Latent export in NumPy format
+- Optional HDF5 latent storage
+- Checkpoint-based training continuation
+- Model configuration export
+- Optional JSON-based model weight export
+- Reconstruction and discriminator-based evaluation metrics
+
 The model is useful for studying whether adversarial learning improves reconstruction quality and latent-space representation for image compression and retrieval.
+
 ---
-3. Conv + BiLSTM Video Autoencoder
+
+### 3. Conv + BiLSTM Video Autoencoder
+
 The video autoencoder combines convolutional feature extraction with bidirectional LSTM sequence modeling.
+
 It is designed for:
-Video sequence compression
-Frame reconstruction
-Latent-space ablation studies
-Reconstruction quality visualization
-PSNR and SSIM evaluation
-UCF101-based video experiments
+
+- Video sequence compression
+- Frame reconstruction
+- Latent-space ablation studies
+- Reconstruction quality visualization
+- PSNR and SSIM evaluation
+- UCF101-based video experiments
+
 ---
-Dataset Compatibility
+
+## Dataset Compatibility
+
 This repository is designed for broad dataset compatibility across different visual domains.
-CFPD / CFPW Face Dataset
+
+### CFPD / CFPW Face Dataset
+
 Contains frontal and profile facial images and is suitable for evaluating pose-invariant compression and reconstruction.
-CelebA
+
+### CelebA
+
 Contains more than 200,000 celebrity face images with diverse poses, lighting conditions, and facial attributes. It is suitable for high-variance face reconstruction experiments.
-IMDb Faces
+
+### IMDb Faces
+
 Contains large-scale unconstrained facial images collected from IMDb. It is useful for testing model robustness on diverse facial images.
-Oxford 17/102 Flowers
+
+### Oxford 17/102 Flowers
+
 Contains high-resolution flower images with complex colors, textures, and object structures. It is useful for evaluating reconstruction fidelity beyond facial datasets.
-MNIST
+
+### MNIST
+
 A classic handwritten digit dataset useful for benchmarking autoencoder behavior on simple grayscale images.
-UCF101
+
+### UCF101
+
 A widely used video action-recognition dataset suitable for evaluating video sequence compression and reconstruction.
-Generic Folder-Based Image Datasets
+
+### Generic Folder-Based Image Datasets
+
 Any image dataset organized using a standard folder structure can be used:
+
 ```bash
 dataset/
     class_1/
@@ -90,7 +137,6 @@ dataset/
     class_2/
         img003.jpg
         img004.jpg
-```
 Use:
 ```bash
 --dataset_type image_folder
