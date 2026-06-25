@@ -301,24 +301,6 @@ Reconstruction Metrics
 - Accuracy
 Real-vs-reconstructed discrimination score
 ---
-Reproducibility Guidelines
-For each experiment, the following information should be saved:
-- Model type
-- Dataset name
-- Dataset path
-- Image resolution
-- Number of frames for video experiments
-- Latent dimension
-- Batch size
-- Number of epochs
-- Optimizer settings
-- Learning rate
-- Random seed
-- Checkpoint path
-- Reconstruction metrics
-- Latent-vector output path
-
----
 Citation
 If you use this repository in your research, please cite:
 ```bibtex
