@@ -142,7 +142,7 @@ Use:
 --dataset_type image_folder
 ```
 ---
-Recommended Repository Structure
+Repository Structure
 ```bash
 AI-Vectorization-Autoencoders/
 │
@@ -258,7 +258,7 @@ python CAE_CelebA.py \
     --epochs 100 \
     --batch_size 64
 ```
-Recommended organized version:
+Organized version:
 ```bash
 python scripts/train_cae.py \
     --data_dir data/celeba/img_align_celeba \
@@ -277,7 +277,7 @@ python Gan_autoencoder_Cfp.py \
     --batch_size 128 \
     --latent_ch 16
 ```
-Recommended organized version:
+Organized version:
 ```bash
 python scripts/train_gan_autoencoder.py \
     --dataset_type cfpd \
@@ -297,7 +297,7 @@ python Gan_autoencoder_Cfp.py \
     --epochs 50 \
     --batch_size 128
 ```
-Recommended organized version:
+Organized version:
 ```bash
 python scripts/train_gan_autoencoder.py \
     --dataset_type image_folder \
@@ -315,7 +315,7 @@ python Gan_autoencoder_Cfp.py \
     --latents_path runs/imdb_latents.npy \
     --latents_n 5000
 ```
-Recommended organized version:
+Organized version:
 ```bash
 python scripts/export_latents.py \
     --model_type gan_ae \
@@ -342,16 +342,6 @@ python Gan_autoencoder_Cfp.py \
     --store_images_in_h5 \
     --h5_gzip 6
 ```
-Recommended organized version:
-```bash
-python scripts/train_gan_autoencoder.py \
-    --dataset_type image_folder \
-    --data data/flowers \
-    --out runs/gan_ae_flowers \
-    --latents_path runs/flowers_latent.h5 \
-    --store_images_in_h5 \
-    --h5_gzip 6
-```
 ---
 Decode From Stored Latents
 ```bash
@@ -359,21 +349,10 @@ python Gan_autoencoder_Cfp.py \
     --decode_h5 runs/flowers_latent.h5 \
     --decode_n 5
 ```
-Recommended organized version:
-```bash
-python scripts/decode_latents.py \
-    --decode_h5 runs/flowers_latent.h5 \
-    --decode_n 5
-```
 ---
 Resume Training From Checkpoint
 ```bash
 python Gan_autoencoder_Cfp.py \
-    --ckpt runs/gan_ae_cfpd/ckpt_epoch050.pt
-```
-Recommended organized version:
-```bash
-python scripts/train_gan_autoencoder.py \
     --ckpt runs/gan_ae_cfpd/ckpt_epoch050.pt
 ```
 ---
@@ -395,16 +374,6 @@ python Video_CAE.py \
     --num_frames 20 \
     --num_train 200 \
     --num_test 50
-```
-Recommended organized version:
-```bash
-python scripts/train_video_autoencoder.py \
-    --data_dir data/UCF101 \
-    --latent_sizes 16,32,64 \
-    --num_frames 20 \
-    --num_train 200 \
-    --num_test 50 \
-    --output_dir runs/video_ucf101
 ```
 ---
 Model Outputs
@@ -428,18 +397,13 @@ NumPy Format
 ```bash
 latents.npy
 ```
-Recommended for fast experimentation and retrieval testing.
-HDF5 Format
-```bash
-latents.h5
-```
 Recommended for large-scale compression experiments and structured storage.
 JSON Format
 ```bash
 model_config.json
 model_weights.json
 ```
-Recommended for external inspection and reproducibility metadata.
+External inspection and reproducibility metadata.
 ---
 Evaluation Metrics
 The repository supports reconstruction, similarity, and discriminator-based metrics.
