@@ -222,12 +222,6 @@ AI-Vectorization-Autoencoders/
     └── test_metrics.py
 ```
 ---
-Installation
-Clone the repository:
-```bash
-git clone https://github.com/your-username/AI-Vectorization-Autoencoders.git
-cd AI-Vectorization-Autoencoders
-```
 Create a Python environment:
 ```bash
 conda create -n visual-vectorization python=3.10
@@ -367,7 +361,7 @@ JSON Format
 model_config.json
 model_weights.json
 ```
-#External inspection and reproducibility metadata.
+# External inspection and reproducibility metadata.
 ---
 Evaluation Metrics
 The repository supports reconstruction, similarity, and discriminator-based metrics.
