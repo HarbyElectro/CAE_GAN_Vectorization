@@ -108,8 +108,6 @@ This repository provides:
 
 # Repository Structure
 
-The following structure is recommended to make the repository more professional, reproducible, and easier for researchers to extend.
-
 ```bash
 CAE_GAN_Vectorization/
 │
