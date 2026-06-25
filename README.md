@@ -275,13 +275,7 @@ NumPy Format
 ```bash
 latents.npy
 ```
-Recommended for large-scale compression experiments and structured storage.
-JSON Format
-```bash
-model_config.json
-model_weights.json
-```
-# External inspection and reproducibility metadata.
+# External inspection and reproducibility metadata
 ---
 Evaluation Metrics
 The repository supports reconstruction, similarity, and discriminator-based metrics.
