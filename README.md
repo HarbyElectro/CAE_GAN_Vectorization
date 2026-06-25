@@ -60,8 +60,7 @@ cd CAE_GAN_Vectorization
 - [Latent Vector Export and Storage](#latent-vector-export-and-storage)
 - [Evaluation Metrics](#evaluation-metrics)
 - [Experiment Outputs](#experiment-outputs)
-- [Recommended Research Workflow](#recommended-research-workflow)
-- [Reproducibility Guidelines](#reproducibility-guidelines)
+- [Research Workflow](#recommended-research-workflow)
 - [Citation](#citation)
 - [Contact](#contact)
 
