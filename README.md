@@ -1,7 +1,5 @@
 # CAE_GAN_Vectorization
 
-<h1 align="center">CAE-GAN Vectorization</h1>
-
 <h2 align="center">AI-Guided Visual Data Vectorization for Compression, Reconstruction, and Semantic Retrieval</h2>
 
 <p align="center">
@@ -985,113 +983,6 @@ image_comparison_results.txt
 
 ---
 
-# Suggested Additional Files
-
-The following files are recommended for improving the repository.
-
----
-
-## Suggested `.gitignore`
-
-```gitignore
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.pytest_cache/
-.ipynb_checkpoints/
-
-# Environments
-.env
-.venv/
-venv/
-conda-env/
-*.egg-info/
-
-# Data
-data/*
-!data/README.md
-datasets/*
-!datasets/README.md
-
-# Experiment outputs
-runs/*
-!runs/README.md
-checkpoints/
-outputs/
-logs/
-
-# Model files
-*.pt
-*.pth
-*.h5
-*.keras
-*.ckpt
-
-# Latent vectors
-*.npy
-*.npz
-
-# Generated images and videos
-*.mp4
-*.avi
-*.mov
-
-# OS files
-.DS_Store
-Thumbs.db
-```
-
----
-
-## Suggested `requirements.txt`
-
-```txt
-numpy
-pandas
-matplotlib
-scikit-learn
-scikit-image
-scipy
-h5py
-opencv-python
-pillow
-tqdm
-tensorflow
-torch
-torchvision
-```
-
----
-
-## Suggested `CITATION.cff`
-
-```yaml
-cff-version: 1.2.0
-title: "CAE-GAN Vectorization"
-message: "If you use this repository in your research, please cite this work."
-type: software
-authors:
-  - family-names: Harby
-    given-names: Ahmed A.
-repository-code: "https://github.com/HarbyElectro/CAE_GAN_Vectorization"
-year: 2025
-preferred-citation:
-  type: article
-  authors:
-    - family-names: Harby
-      given-names: Ahmed A.
-    - family-names: Zulkernine
-      given-names: F.
-    - family-names: Abdulsalam
-      given-names: H. M.
-  title: "AI-guided Vectorization for Efficient Storage and Semantic Retrieval of Visual Data"
-  journal: "Discover Artificial Intelligence"
-  year: 2025
-  publisher:
-    name: "Springer Nature"
-```
 
 ---
 
@@ -1111,11 +1002,7 @@ If you use this repository in your research, please cite:
 
 ---
 
-# Suggested GitHub Repository Description
 
-```text
-Research framework for AI-guided visual data vectorization using convolutional, GAN-based, and video autoencoders for compression, reconstruction, latent extraction, and semantic retrieval.
-```
 
 ---
 
@@ -1137,27 +1024,13 @@ visual-data-vectorization
 multimedia-compression
 ```
 
----
-
-# License
-
-Please add a license before public release.
-
-Recommended licenses for academic research software:
-
-- MIT License
-- Apache License 2.0
-- BSD 3-Clause License
-
----
-
 # Contact
 
 Repository maintainer:
 
 ```text
 Ahmed A. Harby
-GitHub: https://github.com/HarbyElectro
+Email: ahmed.harby@queensu.ca
 Repository: https://github.com/HarbyElectro/CAE_GAN_Vectorization
 ```
 
