@@ -16,7 +16,6 @@ Usage example:
         --epochs 100 \
         --batch_size 64
 """
-
 import os
 import argparse
 
