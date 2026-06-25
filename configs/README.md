@@ -4,8 +4,6 @@ This folder contains experiment configuration files for the models in this repos
 
 Each configuration file stores dataset paths, model settings, training parameters, and output locations.
 
-These files are useful for reproducible research because they document the exact settings used for each experiment.
-
 ## Files
 
 - `cae_celeba.yaml` — configuration for training the Convolutional Autoencoder on CelebA.
