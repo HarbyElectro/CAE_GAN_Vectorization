@@ -368,7 +368,7 @@ psnr_ssim_latent_comparison.png
 
 ---
 
-# Supported Datasets
+# Datasets
 
 # CelebA
 
