@@ -1,6 +1,4 @@
-# CAE_GAN_Vectorization
-
-<h2 align="center">AI-Guided Visual Data Vectorization for Compression, Reconstruction, and Semantic Retrieval</h2>
+# AI-guided Vectorization for Efficient Storage and Semantic Retrieval of Visual Data
 
 <p align="center">
   <b>Convolutional Autoencoder • GAN Autoencoder • Video Autoencoder • Latent Vector Extraction • Visual Data Reconstruction</b>
