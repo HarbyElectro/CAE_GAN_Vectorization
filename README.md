@@ -107,9 +107,8 @@ This repository provides:
 ---
 
 # Repository Structure
-The following structure is recommended to make the repository more professional, reproducible, and easier for researchers to extend.
 
-This structure keeps your current scripts while adding folders for datasets, experiment outputs, documentation, configurations, examples, notebooks, and tests.
+The following structure is recommended to make the repository more professional, reproducible, and easier for researchers to extend.
 
 ```bash
 CAE_GAN_Vectorization/
