@@ -865,7 +865,7 @@ runs/video_ae/
 
 ---
 
-# Recommended Research Workflow
+# Research Workflow
 
 1. Select a dataset.
 2. Choose a model architecture:
@@ -880,30 +880,6 @@ runs/video_ae/
 8. Compare compression ratio, retrieval performance, and reconstruction fidelity.
 9. Save model configuration and experiment metadata.
 10. Report results for reproducible research.
-
----
-
-# Reproducibility Guidelines
-
-For each experiment, save the following information:
-
-- Model name
-- Dataset name
-- Dataset path
-- Image resolution
-- Number of frames for video experiments
-- Latent dimension
-- Batch size
-- Number of epochs
-- Optimizer type
-- Learning rate
-- Random seed
-- Checkpoint path
-- Latent-vector output path
-- Reconstruction metrics
-- Similarity metrics
-- Hardware information
-- Software versions
 
 ---
 
